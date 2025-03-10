@@ -15,3 +15,16 @@ document.querySelector("#registration-form").addEventListener("submit", (event) 
         alert("Please fill in all required fields.");
     }
 });
+document.querySelector("#registration-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = document.querySelector("#name").value;
+    const email = document.querySelector("#email").value;
+
+    if (name && email) {
+        localStorage.setItem("userName", name);
+        localStorage.setItem("userEmail", email);
+        alert(`Thank you for registering, ${name}!`);
+    } else {
+        alert("Please fill in all required fields.");
+    }
+});
